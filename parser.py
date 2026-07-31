@@ -5,12 +5,12 @@ from config import TIMEOUT, headers
 
 def fetch_page(url):
     try:
-        response=requests.get(url, headers=headers, timeout=TIMEOUT)
+        response=requests.get(url, headers=headers, timeout=TIMEOUT) 
         response.raise_for_status()
 
         print(response.url, response.status_code)
         
-        data=response.text
+        data=response.text # как раз html код страницы
     
     except HTTPError as http:
         print(f"Ошибка HTTP: {http}")
@@ -20,7 +20,7 @@ def fetch_page(url):
     except Timeout as to:
         print(f"Превишено время ожидания: {to}")
     else:
-        return data
+        return data # возвращаем
 
 def parse_page(data):
     soup=BeautifulSoup(data, 'lxml')
@@ -53,7 +53,7 @@ def parse_page(data):
 
     # Собираем в список словарей
     forecast = []
-    for i in range(len(date_blocks)):
+    for i in range(len(date_blocks)): # это чтобы количество дат, температур и состояний совподало - для красивого вывода
         date_block = date_blocks[i]
         value_block = value_blocks[i]
         state_block = state_blocks[i]
@@ -82,8 +82,8 @@ def parse_page(data):
         today=forecast[0]
     return {"forecast":forecast, 'today':today}
 
-def get_urls(url):
-    try:
+def get_urls(url): # добавлял в последнюю очередь
+    try: # Все тоже самое. Можно было и в fetch_page всю эту логику прописать.
         response=requests.get(url, headers=headers, timeout=TIMEOUT)
         response.raise_for_status()
 
@@ -108,10 +108,10 @@ def get_urls(url):
         cities = list_cities.find_all("a")
 
         for city in cities:
-            city_name = city.text if city else None
+            city_name = city.text if city else None # необычно...
             city_url = f"{url}{city.get('href')}weekly/"
             
-            CITY_URLS[city_name]=city_url
+            CITY_URLS[city_name]=city_url # мне понравилась конструкция
 
         return CITY_URLS
 
