@@ -14,11 +14,11 @@ def select_city():
     return chosen_city # выбранный город
 
 if __name__ == "__main__":
-    CITY_URLS=get_urls(base_url)
+    CITY_URLS=get_urls(base_url) # получаем url
     chosen_city = select_city() # сохраняем ответ в переменной
     url = CITY_URLS[chosen_city] # берем url по ключу
     print(f"выбран {chosen_city}: {url}")
-    html=fetch_page(url)
+    html=fetch_page(url) # ну это html код страницы
     
     if html:
         some_data=parse_page(html)
