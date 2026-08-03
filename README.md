@@ -31,18 +31,21 @@ Gismeteo_parser - парсер сайта погоды Gismeteo предоста
 
 Последний вариант сохраняет данные в CSV файл, который вы можете открыть в любом удобном для вас редакторе.
 
+---
 ## 🚀 Установка и запуск
 
 1. Клонируйте репозиторий:
-   ```bash
-   git clone https://github.com/whitecapman/Gismeteo_parser.git
-   cd Gismeteo_parser
-   ```
+```bash
+git clone https://github.com/whitecapman/Gismeteo_parser.git
+cd Gismeteo_parser
+```
+
 2. Установите зависимости:
-  ```bash
-  pip install -r requirements.txt
-  ```
+```bash
+pip install -r requirements.txt
+```
+
 3. Запустите парсер:
-  ```bash
-  python parser.py
-  ```
+```bash
+python parser.py
+```
