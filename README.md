@@ -11,6 +11,8 @@ Gismeteo_parser - парсер сайта погоды Gismeteo имеет мн�
 
 <img width="656" height="314" alt="image" src="https://github.com/user-attachments/assets/716580c5-f8a6-4ffe-8e4a-7648402cf410" />
 
+Существует 4 варианта вывода данных:
+
 1 вариант: Погода на сегодня
 
 <img width="943" height="199" alt="image" src="https://github.com/user-attachments/assets/efaf8d62-ce6a-49f7-9807-795bc1106a5c" />
